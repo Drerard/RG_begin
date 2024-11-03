@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class AbstractDungeonGenerator : MonoBehaviour
 {
-    [SerializeField] protected TilemapVisualizer tilemapVisualizer = null;
-
+    [SerializeField] protected Dungeon dungeon;
+    [SerializeField, Space(5)] protected TilemapVisualizer tilemapVisualizer = null;
     [SerializeField] protected Vector2Int startPos = Vector2Int.zero;
 
 
