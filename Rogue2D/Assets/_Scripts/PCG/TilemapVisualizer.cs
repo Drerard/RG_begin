@@ -8,27 +8,40 @@ using Random = UnityEngine.Random;
 public class TilemapVisualizer: MonoBehaviour
 {
     #region FIELDS
-    [SerializeField] private Tilemap floorTilemap, wallTilemap;
+    [SerializeField] private Tilemap floorTilemap, wallTilemap, corridorTilemap, decorTilemap;
+    [Space(5)]
+    [SerializeField] private TileBase centerRoomTile;
+    [SerializeField] private TileBase corridorTile;
+    [Space(5)]
+    [SerializeField] private TileBase[] floorTile;
+    [SerializeField] private WallsData[] wallsTile;
 
-    [SerializeField, Space(5)] private TileBase centerRoomTile;
-    [SerializeField, Space(5)] private TileBase[] floorTile;
-    [SerializeField, Space(5)] private WallsData[] wallsTile;
+
+    [HideInInspector] public List<Vector2Int> topWalls;
     #endregion
 
-
-    public void PaintRoomCenterTile(HashSet<Vector2Int> centerPos)
+    public void PaintDecorTile(Vector2Int centerPos, TileBase tile)
     {
-        PaintTiles(centerPos, floorTilemap, centerRoomTile);
+        PaintSingleTile(decorTilemap, tile, centerPos);
+    }
+
+    public void PaintRoomCenterTile(Vector2Int centerPos)
+    {
+        PaintSingleTile(floorTilemap, centerRoomTile, centerPos);
+    }
+    public void PaintCorridorTile(Vector2Int centerPos)
+    {
+        PaintSingleTile(corridorTilemap, corridorTile, centerPos);
     }
     public void PaintFloorTiles(HashSet<Vector2Int> floorPos)
     {
         if (floorTile.Length != 0)
-            PaintTiles(floorPos, floorTilemap, floorTile);
+            PaintTiles(floorTilemap, floorTile, floorPos);
     }
     public void PaintWallTiles(HashSet<Vector2Int> wallPos)
     {
         if(wallsTile.Length != 0)
-            PaintTiles(wallPos, wallTilemap, wallsTile[0].Tile);
+            PaintTiles(wallTilemap, wallsTile[0].Tile, wallPos);
     }
 
     public void PaintWallTile(Vector2Int wallPos, string neighboursBinaryType)
@@ -42,6 +55,9 @@ public class TilemapVisualizer: MonoBehaviour
             {
                 if(ExistenceCheck(wallsTile[i].existenceMask, neighboursBinaryType) && ((wallsTile[i].absenceMaskInt & nghTypeAsInt) == 0))
                 {
+                    if (wallsTile[i].wallName == "Top")
+                        topWalls.Add(wallPos);
+
                     wallTile = wallsTile[i].Tile;
                     i = wallsTile.Length;
                 }
@@ -61,14 +77,14 @@ public class TilemapVisualizer: MonoBehaviour
     }
 
 
-    private void PaintTiles(HashSet<Vector2Int> positions, Tilemap tilemap, TileBase tile)
+    private void PaintTiles(Tilemap tilemap, TileBase tile, HashSet<Vector2Int> positions)
     {
         foreach (var position in positions)
         {
             PaintSingleTile(tilemap, tile, position);
         }
     }
-    private void PaintTiles(HashSet<Vector2Int> positions, Tilemap tilemap, TileBase[] tile)
+    private void PaintTiles(Tilemap tilemap, TileBase[] tile, HashSet<Vector2Int> positions)
     {
         foreach (var position in positions)
         {
@@ -85,7 +101,9 @@ public class TilemapVisualizer: MonoBehaviour
 
     public void Clear()
     {
+        corridorTilemap.ClearAllTiles();
         floorTilemap.ClearAllTiles();
         wallTilemap.ClearAllTiles();
+        decorTilemap.ClearAllTiles();
     }
 }

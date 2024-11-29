@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KdTree" Collapsed="true">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\Algoritms\KdTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KdTreeNode" Collapsed="true">
+    <Position X="1.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\Algoritms\KdTreeNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProceduralGenerationAlgoritms" Collapsed="true">
+    <Position X="1.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgBAAAgAEAAAAAAAAAAAgAAAAAAAAAAAAAAAACCAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\Algoritms\ProceduralGenerationAlgoritms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Direction2D" Collapsed="true">
+    <Position X="1.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAABIAAgAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\Algoritms\ProceduralGenerationAlgoritms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WallGenerator" Collapsed="true">
+    <Position X="1.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\Algoritms\WallGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room" Collapsed="true">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wikAAFAAEACAEAAAgIAIAACAAABAAAYABAAAAAAIAAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\Data\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AbstractDungeonGenerator">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\_Scripts\PCG\DungeonGenerators\AbstractDungeonGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dungeon" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AbstractLogicDungeonGenerator" Collapsed="true">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIACQAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\_Scripts\PCG\DungeonGenerators\AbstractLogicDungeonGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dungeon" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BaseLogicGenerator" Collapsed="true">
+    <Position X="11.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAQAAAAAAAAAAgQIAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\DungeonGenerators\BaseLogicGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorridorBasedDungeonGenerator" Collapsed="true">
+    <Position X="4.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAABAQAACAAQAAAEAAAIAAAAQAAAAAAAAI=</HashCode>
+      <FileName>Assets\_Scripts\PCG\DungeonGenerators\CorridorBasedDungeonGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomBasedDungeonGenerator" Collapsed="true">
+    <Position X="6.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgDAAAAAAEAAEggAACAAQAAAFAQAIAAgQEgAEAACAAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\DungeonGenerators\RoomBasedDungeonGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleRandomWalkDungeonGenerator" Collapsed="true">
+    <Position X="5.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAQAAQAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\DungeonGenerators\SimpleRandomWalkDungeonGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AbstractEnemyGenerator" Collapsed="true">
+    <Position X="9" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAQAAAI=</HashCode>
+      <FileName>Assets\_Scripts\PCG\EnvironmentAndEnemyGenerators\AbstractEnemyGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dungeon" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AbstractEnvironmentGenerator" Collapsed="true">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAgAAI=</HashCode>
+      <FileName>Assets\_Scripts\PCG\EnvironmentAndEnemyGenerators\AbstractEnvironmentGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyGenerator" Collapsed="true">
+    <Position X="9" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAIAIAAAAAQAAQAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\EnvironmentAndEnemyGenerators\EnemyGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnvironmentGenerator" Collapsed="true">
+    <Position X="4.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAQkQDABAAwABIAAAAAQAhAgAAAAAhAABAAAAAACEA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\EnvironmentAndEnemyGenerators\EnvironmentGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dungeon" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABCAAALAAAIABACAIAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\Dungeon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DungeonManager" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAYIBQQAAAAAAAAEBAAAAAAABgEA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\DungeonManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TilemapVisualizer" Collapsed="true">
+    <Position X="1.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAQEEAAEAAABgAACAAAAAAAAAAEgIABBAQABEEAA=</HashCode>
+      <FileName>Assets\_Scripts\PCG\TilemapVisualizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

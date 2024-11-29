@@ -52,6 +52,5 @@ public static class WallGenerator
             }
             tilemapVisualizer.PaintWallTile(wallPos, neighboursBinaryType);
         }
-
     }
 }
