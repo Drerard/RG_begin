@@ -13,7 +13,7 @@ public class TilemapVisualizer: MonoBehaviour
     [SerializeField] private TileBase centerRoomTile;
     [SerializeField] private TileBase corridorTile;
     [Space(5)]
-    [SerializeField] private TileBase[] floorTile;
+    [SerializeField] private TileBase[] floorTiles;
     [SerializeField] private WallsData[] wallsTile;
 
 
@@ -35,8 +35,8 @@ public class TilemapVisualizer: MonoBehaviour
     }
     public void PaintFloorTiles(HashSet<Vector2Int> floorPos)
     {
-        if (floorTile.Length != 0)
-            PaintTiles(floorTilemap, floorTile, floorPos);
+        if (floorTiles.Length != 0)
+            PaintTiles(floorTilemap, floorTiles, floorPos);
     }
     public void PaintWallTiles(HashSet<Vector2Int> wallPos)
     {

@@ -25,8 +25,9 @@ public class EnvironmentGenerator : AbstractEnvironmentGenerator
     {
         GenerateDoor();
         GenerateChest();
-        GenerateThing();
         GeneratePassage();
+
+        GenerateThing();
 
         GenerateDungeonDecor();
     }

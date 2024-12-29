@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private enum CharState
+    private enum CharacterState
     {
         Idle,
         Run,
@@ -16,9 +16,9 @@ public class Player : MonoBehaviour
     #region FIELDS
     [SerializeField] private float moveSpeed = 10;
     [Space(5)]
-    [SerializeField] private float DashForce = 15;
-    [SerializeField] private float DashCD = 1;
-    [SerializeField] private float DashDuration = 1;
+    [SerializeField] private float dashForce = 15;
+    [SerializeField] private float dashCD = 1;
+    [SerializeField] private float dashDuration = 1;
     [Space(5)]
     [SerializeField] public PlayerLayerData LayerData;
     [Header("Sound Effects")]
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
 
     private float timerNormalAttackCD = 0;
-    private float timerDashCD = 0;
+    [SerializeField] private float timerDashCD = 0;
     private bool isDashing = false;
     private Vector2 lastDirection = Vector2.right;
 
@@ -40,9 +40,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
 
 
-    private CharState State
+    private CharacterState State
     {
-        get { return (CharState)animator.GetInteger("State"); }
+        get { return (CharacterState)animator.GetInteger("State"); }
         set { animator.SetInteger("State", (int)value); }
     }
     #endregion
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
 
         if (playerCombatSystem.IsDead())
         {
-            State = CharState.Die;
+            State = CharacterState.Die;
             StopMove();
             return;
         }
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButtonDown(InputButtonData.Fire1))
             {
-                State = CharState.Attack;
+                State = CharacterState.Attack;
                 attackSound.Play();
                 timerNormalAttackCD = playerCombatSystem.GetNormalAttackCD();
                 playerCombatSystem.NormalAttack();
@@ -85,14 +85,14 @@ public class Player : MonoBehaviour
             timerNormalAttackCD -= Time.deltaTime;
         }
 
-        if (timerDashCD <= 0)
+        if (timerDashCD <= 0 && !isDashing)
         {
             if (Input.GetButtonDown(InputButtonData.Fire2))
             {
                 isDashing = true;
-                playerCombatSystem.Dash(DashDuration);
-                timerDashCD = DashCD;
-                StartCoroutine(StopDash(DashDuration));
+                playerCombatSystem.Dash(dashDuration);
+                timerDashCD = dashCD;
+                StartCoroutine(StopDash(dashDuration));
             }
         }
         else
@@ -110,10 +110,12 @@ public class Player : MonoBehaviour
     {
         if (playerCombatSystem.IsDead())
         {
-            State = CharState.Die;
+            State = CharacterState.Die;
             StopMove();
             return;
         }
+
+        
 
         if (isDashing)
         {
@@ -123,12 +125,12 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButton(InputButtonData.Horizontal) || Input.GetButton(InputButtonData.Vertical))
             {
-                State = CharState.Run;
+                State = CharacterState.Run;
                 Move();
             }
             else
             {
-                State = CharState.Idle;
+                State = CharacterState.Idle;
                 StopMove();
             }
         }
@@ -161,7 +163,7 @@ public class Player : MonoBehaviour
 
     private void Dash()
     {
-        rb.velocity = DashForce * lastDirection.normalized;
+        rb.velocity = dashForce * lastDirection.normalized;
     }
 
     private void StopMove()

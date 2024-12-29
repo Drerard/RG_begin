@@ -25,7 +25,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
 
         for (int i = 0; i < randomWalkParameters.iterations; i++)
         {
-            HashSet<Vector2Int> path = ProceduralGenerationAlgoritms.SimpleRandomWalk(currentPos, randomWalkParameters.walkLenght);
+            HashSet<Vector2Int> path = ProceduralGenerationAlgoritms.SimpleRandomWalk(currentPos, randomWalkParameters.walkLength);
             floorPos.UnionWith(path);
 
             if (randomWalkParameters.startRandomlyEachIteration)
@@ -40,7 +40,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
 
         for (int i = 0; i < randomWalkParameters.iterations; i++)
         {
-            HashSet<Vector2Int> path = ProceduralGenerationAlgoritms.SimpleRandomWalk(currentPos, randomWalkParameters.walkLenght, roomParam, offset);
+            HashSet<Vector2Int> path = ProceduralGenerationAlgoritms.SimpleRandomWalk(currentPos, randomWalkParameters.walkLength, roomParam, offset);
             floorPos.UnionWith(path);
 
             if (randomWalkParameters.startRandomlyEachIteration)

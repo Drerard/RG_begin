@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2957618388317990911
 Transform:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0}
   randomWalkParameters:
     iterations: 180
-    walkLenght: 18
+    walkLength: 10
     startRandomlyEachIteration: 1
   corridorLenght: 40
   corridorCount: 100
@@ -662,7 +662,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0}
   randomWalkParameters:
     iterations: 100
-    walkLenght: 10
+    walkLength: 10
     startRandomlyEachIteration: 1
   minRoomWidth: 16
   minRoomHeight: 16
@@ -1214,7 +1214,7 @@ MonoBehaviour:
   decorTilemap: {fileID: 2957618389241793524}
   centerRoomTile: {fileID: 11400000, guid: 809adfdab6c6b5942b4c023e9e0ff12f, type: 2}
   corridorTile: {fileID: 11400000, guid: c485793dcfb8e744090b84f0d4bceb7e, type: 2}
-  floorTile:
+  floorTiles:
   - {fileID: 11400000, guid: 471853985ed4b5242ad12af71ace0cf6, type: 2}
   - {fileID: 11400000, guid: e3ae741dcc6c8b34789a2caa7f6c97a2, type: 2}
   - {fileID: 11400000, guid: e194633f93778294a8f32e817d3c3a4f, type: 2}
@@ -28129,7 +28129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2957618389741263286
 Transform:
   m_ObjectHideFlags: 0
@@ -28161,7 +28161,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0}
   randomWalkParameters:
     iterations: 180
-    walkLenght: 18
+    walkLength: 10
     startRandomlyEachIteration: 1
 --- !u!1 &2957618389803402357
 GameObject:

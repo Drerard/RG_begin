@@ -8,7 +8,7 @@ public abstract class DungeonMonster : MonoBehaviour, IAttacker, IDamageable
 
     public abstract float HealthPoint { get; protected set; }
 
-    protected bool isActive = false;
+    [SerializeField] protected bool isActive = false;
     protected Room room;
 
 
